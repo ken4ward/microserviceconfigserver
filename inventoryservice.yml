@@ -1,11 +1,14 @@
-application:
-  name: orderservice
+spring:
+  application:
+    name: orderservice
+    datasource:
+      url: jdbc:postgresql://localhost:5432/inventoryservice?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false
+      #    username: wikiwoo
+      #    password: ipass
+      driver-class-name: org.postgresql.Driver
+      tomcat:
+        test-while-idle: true
+      dbcp2:
+        validation-query: SELECT 1
   datasource:
-    url: jdbc:postgresql://localhost:5432/inventoryservice?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false
-    #    username: wikiwoo
-    #    password: ipass
-    driver-class-name: org.postgresql.Driver
-    tomcat:
-      test-while-idle: true
-    dbcp2:
-      validation-query: SELECT 1
+    initialization-mode: true
